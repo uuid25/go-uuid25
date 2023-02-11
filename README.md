@@ -44,6 +44,26 @@ assert(d.ToUrn() == "urn:uuid:e7a1d63b-7117-4423-8988-afcf12161878")
 func assert(c bool) { if !c { panic("assertion failed") } }
 ```
 
+The `uuid25ext` package integrates the popular `github.com/google/uuid` module
+and adds functionality to generate a UUID value in the Uuid25 format.
+
+```go
+import "fmt"
+import "github.com/google/uuid"
+import "github.com/uuid25/go-uuid25/ext"
+
+// convert from/to github.com/google/uuid module's UUID value
+googleUuid, _ := uuid.Parse("f38a6b1f-576f-4c22-8d4a-5f72613483f6")
+e := uuid25ext.FromUUID(googleUuid)
+assert(e == "ef1zh7jc64vprqez41vbwe9km")
+assert(uuid25ext.ToUUID(e) == googleUuid)
+
+// generate new UUID in Uuid25 format
+fmt.Println(uuid25ext.NewV4()) // e.g. "99wfqtl0z0yevxzpl4hv2dm5p"
+
+func assert(c bool) { if !c { panic("assertion failed") } }
+```
+
 ## License
 
 Licensed under the Apache License, Version 2.0.
