@@ -12,7 +12,7 @@ import (
 	"math"
 )
 
-// Primary value type containing the Uuid25 representation of a UUID.
+// The primary value type containing the Uuid25 representation of a UUID.
 //
 // A valid value of this type must be constructed through FromBytes() or one of
 // Parse*() functions.
@@ -271,7 +271,7 @@ func (uuid25 Uuid25) Value() (driver.Value, error) {
 	return uuid25.String(), nil
 }
 
-// Error parsing a UUID string representation.
+// An error parsing a UUID string representation.
 var parseError = errors.New("could not parse a UUID string")
 
 // Converts a digit value array in `srcBase` to that in `dstBase`.
@@ -338,7 +338,7 @@ func convertBase(src []byte, dst []byte, srcBase uint, dstBase uint) error {
 	return nil
 }
 
-// O(1) map from ASCII code points to Base36 digit values.
+// An O(1) map from ASCII code points to Base36 digit values.
 var decodeMap = [256]byte{
 	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
 	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,

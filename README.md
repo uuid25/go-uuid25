@@ -44,7 +44,7 @@ assert(d.ToUrn() == "urn:uuid:e7a1d63b-7117-4423-8988-afcf12161878")
 func assert(c bool) { if !c { panic("assertion failed") } }
 ```
 
-The `uuid25ext` package integrates the popular `github.com/google/uuid` module
+The [uuid25ext] package integrates the popular [github.com/google/uuid] module
 and adds functionality to generate a UUID value in the Uuid25 format.
 
 ```go
@@ -64,10 +64,14 @@ fmt.Println(uuid25ext.NewV4()) // e.g. "99wfqtl0z0yevxzpl4hv2dm5p"
 func assert(c bool) { if !c { panic("assertion failed") } }
 ```
 
+[uuid25ext]: https://pkg.go.dev/github.com/uuid25/go-uuid25/ext
+[github.com/google/uuid]: https://pkg.go.dev/github.com/google/uuid
+
 ## License
 
 Licensed under the Apache License, Version 2.0.
 
 ## See also
 
-- [uuid25 package - github.com/uuid25/go-uuid25 - pkg.go.dev](https://pkg.go.dev/github.com/uuid25/go-uuid25)
+- [uuid25 package - github.com/uuid25/go-uuid25 - Go Packages](https://pkg.go.dev/github.com/uuid25/go-uuid25)
+- [uuid25ext package - github.com/uuid25/go-uuid25/ext - Go Packages](https://pkg.go.dev/github.com/uuid25/go-uuid25/ext)
